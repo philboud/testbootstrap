@@ -19,11 +19,9 @@ export default {
     }
   },
   created () {
-    console.log('par', this.$route.params.id)
     axios.get(`http://localhost:3000/client/` + this.$route.params.id)
       .then(response => {
         this.clients = response.data
-        console.log(this.clients)
       })
       .catch(e => {
         this.errors.push(e)
